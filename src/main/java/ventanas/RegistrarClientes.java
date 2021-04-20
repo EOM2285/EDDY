@@ -232,7 +232,8 @@ public class RegistrarClientes extends javax.swing.JFrame {
         Telefono_txt.setText("");
         Correo_txt.setText("");
         
-        //..
+        
+        
     }//GEN-LAST:event_Boton_registrarActionPerformed
 
     

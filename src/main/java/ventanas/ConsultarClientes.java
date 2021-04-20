@@ -190,6 +190,7 @@ if(Tabla.getSelectedRow() == -1){
     }//GEN-LAST:event_EliminarActionPerformed
 
     public void Eliminar(){
+        
         int fila = Tabla.getSelectedRow();
         String ID = Tabla.getValueAt(fila, 2).toString();
    int n = JOptionPane.showConfirmDialog(null, "Seguro desea eliminar la información del cliente?","Cliente",
