@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import Conexiones.Clock;
 import Conexiones.Conexion;
 import java.awt.HeadlessException;
 import java.sql.Connection;
@@ -26,7 +27,17 @@ public class RegistroProveedor extends javax.swing.JFrame {
     int contador = 0;
     String iva ;
     public RegistroProveedor() {
+        
+        
+        
+        
         initComponents();
+        
+        //HILO RELOJ
+        Clock HiloClock = new Clock(lblClock);
+        HiloClock.start();
+        
+        
         limpiarPantalla();
         verPantalla();
         desabilitado();
@@ -116,6 +127,7 @@ public class RegistroProveedor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         pantalla = new javax.swing.JTable();
         idCompañia = new javax.swing.JTextField();
+        lblClock = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnMenuPrincipal = new javax.swing.JMenuItem();
@@ -215,6 +227,8 @@ public class RegistroProveedor extends javax.swing.JFrame {
             }
         });
 
+        lblClock.setText("jLabel4");
+
         jMenu1.setText("OPCIONES");
 
         btnMenuPrincipal.setText("MENÚ PRINCIPAL");
@@ -266,6 +280,10 @@ public class RegistroProveedor extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblClock, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,7 +316,9 @@ public class RegistroProveedor extends javax.swing.JFrame {
                         .addGap(44, 44, 44)
                         .addComponent(btnBorrar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(lblClock)
+                .addContainerGap())
         );
 
         pack();
@@ -547,6 +567,7 @@ public class RegistroProveedor extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblClock;
     private javax.swing.JTextField nombreCompañia;
     private javax.swing.JTable pantalla;
     private javax.swing.JTextField telefono;
