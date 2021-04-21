@@ -64,7 +64,12 @@ public class LoginUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("OLVIDO SU CONTRASEÑA?");
+        jButton2.setText("CREAR USUARIO");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,8 +153,9 @@ public class LoginUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "ACCESO CORRECTO");
             this.dispose();
             
-            RegistroProductos registroProd = new RegistroProductos();
-            registroProd.setVisible(true);
+            Principal vPrincipal = new Principal();
+            vPrincipal.setVisible(true);
+           
             
             }else{
             JOptionPane.showMessageDialog(this, "CONTRASEÑA INCORRECTA");
@@ -171,6 +177,12 @@ public class LoginUsuario extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
+        AgregarUsuarios vAgregarUsuarios = new AgregarUsuarios();
+        vAgregarUsuarios.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

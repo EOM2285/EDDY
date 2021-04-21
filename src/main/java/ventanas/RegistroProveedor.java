@@ -116,6 +116,10 @@ public class RegistroProveedor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         pantalla = new javax.swing.JTable();
         idCompañia = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        btnMenuPrincipal = new javax.swing.JMenuItem();
+        btnCerrarS = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -211,6 +215,28 @@ public class RegistroProveedor extends javax.swing.JFrame {
             }
         });
 
+        jMenu1.setText("OPCIONES");
+
+        btnMenuPrincipal.setText("MENÚ PRINCIPAL");
+        btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuPrincipalActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnMenuPrincipal);
+
+        btnCerrarS.setText("CERRAR SESIÓN");
+        btnCerrarS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnCerrarS);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -272,7 +298,7 @@ public class RegistroProveedor extends javax.swing.JFrame {
                         .addGap(44, 44, 44)
                         .addComponent(btnBorrar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -456,6 +482,20 @@ public class RegistroProveedor extends javax.swing.JFrame {
        idCompañia.transferFocus();
     }//GEN-LAST:event_idCompañiaActionPerformed
 
+    private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
+        this.dispose();
+        Principal vPrincipal = new Principal();
+        vPrincipal.setVisible(true);
+        
+    }//GEN-LAST:event_btnMenuPrincipalActionPerformed
+
+    private void btnCerrarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSActionPerformed
+        this.dispose();
+        LoginUsuario vLogin = new LoginUsuario();
+        vLogin.setVisible(true);
+        
+    }//GEN-LAST:event_btnCerrarSActionPerformed
+
 
    
     /**
@@ -494,7 +534,9 @@ public class RegistroProveedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JMenuItem btnCerrarS;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JMenuItem btnMenuPrincipal;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JTextField correo;
@@ -502,6 +544,8 @@ public class RegistroProveedor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nombreCompañia;
     private javax.swing.JTable pantalla;

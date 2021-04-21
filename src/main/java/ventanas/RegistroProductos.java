@@ -180,6 +180,10 @@ public class RegistroProductos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         pantalla = new javax.swing.JTable();
         ID = new javax.swing.JTextField();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Opcionesmnu = new javax.swing.JMenu();
+        btnMenuPrincipal = new javax.swing.JMenuItem();
+        btnCerrarS = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -343,6 +347,28 @@ public class RegistroProductos extends javax.swing.JFrame {
             }
         });
 
+        Opcionesmnu.setText("OPCIONES");
+
+        btnMenuPrincipal.setText("MENÚ PRINCIPAL");
+        btnMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenuPrincipalActionPerformed(evt);
+            }
+        });
+        Opcionesmnu.add(btnMenuPrincipal);
+
+        btnCerrarS.setText("CERRAR SESIÓN");
+        btnCerrarS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSActionPerformed(evt);
+            }
+        });
+        Opcionesmnu.add(btnCerrarS);
+
+        jMenuBar1.add(Opcionesmnu);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -408,7 +434,6 @@ public class RegistroProductos extends javax.swing.JFrame {
                                     .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1055, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(36, Short.MAX_VALUE))))
         );
@@ -454,7 +479,7 @@ public class RegistroProductos extends javax.swing.JFrame {
                     .addComponent(btnBorrar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -742,6 +767,18 @@ public class RegistroProductos extends javax.swing.JFrame {
        ID.transferFocus();
     }//GEN-LAST:event_IDActionPerformed
 
+    private void btnMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuPrincipalActionPerformed
+        this.dispose();
+        Principal vPrincipal = new Principal();
+        vPrincipal.setVisible(true);
+    }//GEN-LAST:event_btnMenuPrincipalActionPerformed
+
+    private void btnCerrarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSActionPerformed
+        this.dispose();
+        LoginUsuario vLogin = new LoginUsuario();
+        vLogin.setVisible(true);
+    }//GEN-LAST:event_btnCerrarSActionPerformed
+
 
    
     /**
@@ -784,9 +821,12 @@ public class RegistroProductos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ID;
+    private javax.swing.JMenu Opcionesmnu;
     private javax.swing.JTextField UxE;
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JMenuItem btnCerrarS;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JMenuItem btnMenuPrincipal;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JTextField codComp;
@@ -806,6 +846,7 @@ public class RegistroProductos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox listCompañia;
     private javax.swing.JTextField margen;
